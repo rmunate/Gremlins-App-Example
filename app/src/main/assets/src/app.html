@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>GREMLINS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"/>
+    <link href="./assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="./assets/css/toastr.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./assets/css/style.app.css" rel="stylesheet" type="text/css" />
+	<script src="./assets/js/toastr.min.js"></script>
+</head>
+<body id="kt_app_body" data-kt-app-header-fixed-mobile="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="false" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default" style="height: 780px">
+
+    <!-- Contenedor SPA -->
+    <div class="d-flex flex-column flex-root">
+
+        <!-- Header -->
+        <div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: false, lg: true}" data-kt-sticky-name="app-header-sticky" data-kt-sticky-offset="{default: false, lg: '300px'}" style="display: none; position: fixed;">
+            <div class="app-container container-fluid d-flex align-items-stretch justify-content-between pt-5" id="kt_app_header_container">
+
+                <!--Logo-->
+                <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-13">
+                    <a href="javascript:void(0)">
+                        <img alt="Logo" src="./assets/img/logo-md.png" class="h-25px" />
+                    </a>
+                </div>
+
+                <!-- Encabezado -->
+                <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+                    <div class="app-header-menu app-header-mobile-drawer align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="app-header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_header_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="{default: 'append', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_body', lg: '#kt_app_header_wrapper'}" id="parent_menu_app">
+                        <div class="menu menu-rounded menu-active-bg menu-state-primary menu-column menu-lg-row menu-title-gray-700 menu-icon-gray-500 menu-arrow-gray-500 menu-bullet-gray-500 my-5 my-lg-0 align-items-stretch fw-semibold px-2 px-lg-0" id="kt_app_header_menu" data-kt-menu="true">
+                            <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+                                <div class="col-12 text-center mt-5 mb-5">
+                                    <span style="font-weight: 900; font-size: 16px;">GREMLINS APP</span><br>
+                                    <div>
+                                        <i class="fas fa-database me-2 text-dark"></i>
+                                        <span id="state_local_storage" class="text-primary"></span>
+                                    </div>
+                                </div>
+                                <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+                                    <div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
+                                        <div class="row">
+                                            <div class="col-lg-8 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+                                                <div class="row">
+
+                                                    <!-- Inicio -->
+                                                    <div class="col-lg-6 mb-3">
+                                                        <div class="menu-item p-0 m-0">
+                                                            <a href="javascript:void(0)" id="menu_item_home" class="menu-link active">
+                                                                <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                                                    <i class="ki-outline ki-focus text-primary fs-1"></i>
+                                                                </span>
+                                                                <span class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold text-gray-800">Inicio</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Productos -->
+                                                    <div class="col-lg-6 mb-3">
+                                                        <div class="menu-item p-0 m-0">
+                                                            <a href="javascript:void(0)" id="menu_item_products" class="menu-link">
+                                                                <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                                                    <i class="ki-outline ki-barcode text-dark fs-1"></i>
+                                                                </span>
+                                                                <span class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold text-gray-800">Productos</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Proveedores -->
+                                                    <div class="col-lg-6 mb-3">
+                                                        <div class="menu-item p-0 m-0">
+                                                            <a href="javascript:void(0)" id="menu_item_providers" class="menu-link">
+                                                                <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                                                    <i class="ki-outline ki-cube-3 text-warning fs-1"></i>
+                                                                </span>
+                                                                <span class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold text-gray-800">Proveedores</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Clientes -->
+                                                    <div class="col-lg-6 mb-3">
+                                                        <div class="menu-item p-0 m-0">
+                                                            <a href="javascript:void(0)" id="menu_item_customers" class="menu-link">
+                                                                <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                                                    <i class="ki-outline ki-shop text-danger fs-1"></i>
+                                                                </span>
+                                                                <span class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold text-gray-800">Clientes</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Pedidos -->
+                                                    <div class="col-lg-6 mb-3">
+                                                        <div class="menu-item p-0 m-0">
+                                                            <a href="javascript:void(0)" id="menu_item_orders" class="menu-link">
+                                                                <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                                                    <i class="ki-outline ki-delivery-3 text-info fs-1"></i>
+                                                                </span>
+                                                                <span class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold text-gray-800">Pedidos</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Tracking -->
+                                                    <div class="col-lg-6 mb-3">
+                                                        <div class="menu-item p-0 m-0">
+                                                            <a href="javascript:void(0)" id="menu_item_tracking" class="menu-link">
+                                                                <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                                                    <i class="ki-outline ki-delivery-geolocation text-success fs-1"></i>
+                                                                </span>
+                                                                <span class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold text-gray-800">Seguimiento</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="separator separator-dashed mx-5 my-5"></div>
+
+                                                    <!-- Reiniciar -->
+                                                    <div class="col-lg-6 mb-3">
+                                                        <div class="menu-item p-0 m-0">
+                                                            <a href="javascript:void(0)" id="restart_app" class="menu-link">
+                                                                <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                                                    <i class="ki-outline ki-setting-2 text-danger fs-1"></i>
+                                                                </span>
+                                                                <span class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold text-gray-800">Reiniciar DB</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Salir -->
+                                                    <div class="col-lg-6 mb-3">
+                                                        <div class="menu-item p-0 m-0">
+                                                            <a href="javascript:void(0)" id="logout_app" class="menu-link">
+                                                                <span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+                                                                    <i class="ki-outline ki-switch text-warning fs-1"></i>
+                                                                </span>
+                                                                <span class="d-flex flex-column">
+                                                                    <span class="fs-6 fw-bold text-gray-800">Salir</span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-navbar flex-shrink-0">
+                        <div class="app-navbar-item d-lg-none ms-2 me-n3" title="Show header menu">
+                            <div class="btn btn-icon btn-active-color-primary w-30px h-30px w-md-35px h-md-35px" id="kt_app_header_menu_toggle">
+                                <i class="ki-outline ki-text-align-left fs-2 fs-md-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="kt_app_root"></div>
+    </div>
+
+    <!-- Templata AUTH -->
+    <template id="auth">
+        <div class="d-flex flex-column flex-lg-row flex-column-fluid">
+            <div class="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
+                <div class="d-flex flex-center flex-column flex-lg-row-fluid">
+                    <form class="form col-10" id="login_form" autocomplete="off">
+                        <div class="text-center mb-20 mt-20">
+                            <h1 class="text-white fw-bolder mb-3">GREMLINS APP</h1>
+                            <div class="text-gray-500 fw-semibold fs-6">v1.0.0 (2024-08-27)</div>
+                            <div class="text-gray-500 fw-semibold fs-6">Raul Mauricio Uñate Castro</div>
+                        </div>
+
+                        <div class="separator separator-content my-14">
+                            <span class="w-125px text-gray-500 fw-semibold fs-7">Uniminuto</span>
+                        </div>
+                        <div class="fv-row mb-10">
+                            <input type="text" placeholder="Username" name="username" id="username" autocomplete="off"
+                                class="form-control" required />
+                        </div>
+                        <div class="fv-row mb-10">
+                            <input type="password" placeholder="Password" name="password" id="password" autocomplete="off"
+                                class="form-control" required />
+                        </div>
+                        <div class="d-grid mb-10">
+                            <button type="submit" class="btn btn-success">
+                                <span class="indicator-label">Ingresar</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex flex-lg-row-fluid w-lg-50 bgi-size-cover bgi-position-center order-1 order-lg-2 mt-10">
+                <div class="d-flex flex-column flex-center py-7 py-lg-15 px-5 px-md-15 w-100">
+                    <a href="javascript:void(0)" class="mb-0 mb-lg-12">
+                        <img src="./assets/img/logo-md.png" class="h-60px h-lg-75px" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Template Home -->
+    <template id="home">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <div class="app-wrapper d-flex" id="kt_app_wrapper">
+
+                <!-- Pagina -->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+
+                        <!-- Titulo -->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10">
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <div class="d-flex flex-stack flex-row-fluid">
+                                    <div class="d-flex flex-column flex-row-fluid">
+                                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                                                <a href="javascript:void(0)" class="text-white text-hover-primary">
+                                                    <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumb-item">
+                                                <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                            </li>
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">GREMLINS</li>
+                                        </ul>
+                                        <div class="page-title d-flex align-items-center me-3">
+                                            <h1 class="page-heading d-flex text-gray-900 fw-bolder fs-2qx flex-column justify-content-center my-0">Inicio</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenido -->
+                        <div id="kt_app_content" class="app-content" style="min-height: 780px;">
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                <div class="card card-flush mt-4">
+                                    <div class="card-body p-3" id="body_products">
+                                        <div class="col-md-12 d-flex justify-content-center pt-20 pb-20">
+                                            <div class="text-center">
+                                                <span class="text-muted">Aplicación Actividad Semana 8</span>
+                                                <br>
+                                                <span class="text-primary">Especialización Desarrollo De Software</span>
+                                                <hr>
+                                                <span class="text-muted">Raul Mauricio Uñate Castro</span>
+                                                <br>
+                                                <span class="text-success">https://github.com/rmunate</span>
+                                                <hr>
+                                                <img src="./assets/img/kotlin.jpg" class="mt-3 pt-10" style="max-width: 70%;">
+                                                <img src="./assets/img/webview.webp" class="mt-3" style="max-width: 80%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+    <!-- Template Productos -->
+    <template id="products">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <div class="app-wrapper d-flex" id="kt_app_wrapper">
+                <!-- Pagina -->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!-- Titulo -->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10">
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <div class="d-flex flex-stack flex-row-fluid">
+                                    <div class="d-flex flex-column flex-row-fluid">
+                                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                                                <a href="javascript:void(0)" class="text-white text-hover-primary">
+                                                    <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumb-item">
+                                                <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                            </li>
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">GREMLINS</li>
+                                        </ul>
+                                        <div class="page-title d-flex align-items-center me-3">
+                                            <h1 class="page-heading d-flex text-gray-900 fw-bolder fs-2qx flex-column justify-content-center my-0">Productos</h1>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 gap-lg-5">
+                                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_create_products">Crear Producto</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenido -->
+                        <div id="kt_app_content" class="app-content" style="min-height: 780px;">
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                <div class="card card-flush mt-4">
+                                    <div class="card-body p-3" id="body_products">
+                                        <!-- Contenido JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal para crear producto -->
+                <div class="modal fade" id="modal_create_products" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Crear Producto</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="create_products_form" autocomplete="off">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="sku">SKU</label>
+                                        <input type="number" class="form-control" name="sku" id="sku" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="nombre">Nombre (Max. Caracteres 20)</label>
+                                        <input type="text" maxlength="20" class="form-control" name="nombre" id="nombre" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="ean">EAN</label>
+                                        <input type="number" class="form-control" name="ean" id="ean" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="valor">Valor</label>
+                                        <input type="number" class="form-control" name="valor" id="valor" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="proveedor">Proveedor</label>
+                                        <select name="proveedor" id="proveedor" class="form-select" required>
+                                            <option value="" selected hidden disabled>Seleccione...</option>
+                                            <option value="1">Gremlins</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_create_products">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Registrar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para editar producto -->
+                <div class="modal fade" id="modal_edit_products" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Editar Producto</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="edit_products_form" autocomplete="off">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_sku">SKU</label>
+                                        <input type="number" class="form-control form-readonly" name="e_sku" id="e_sku" required readonly>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_nombre">Nombre (Max. Caracteres 20)</label>
+                                        <input type="text" maxlength="20" class="form-control" name="e_nombre" id="e_nombre" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_ean">EAN</label>
+                                        <input type="number" class="form-control" name="e_ean" id="e_ean" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_valor">Valor</label>
+                                        <input type="number" class="form-control" name="e_valor" id="e_valor" required>
+                                    </div>
+
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_proveedor">Proveedor</label>
+                                        <select name="e_proveedor" id="e_proveedor" class="form-select" required>
+                                            <option value="" selected hidden disabled>Seleccione...</option>
+                                            <option value="1">Gremlins</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_edit_products">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Editar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="modal_deleted_products" class="custom-modal-bg">
+                    <div class="custom-modal-content">
+                      <p class="fs-4">¿Estás seguro de que deseas eliminar este elemento?</p>
+                      <button id="confirm-yes" class="btn btn-sm btn-danger">Sí, Eliminar!</button>
+                      <button id="confirm-no" class="btn btn-sm btn-primary">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+    <!-- Template Providers -->
+    <template id="providers">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <div class="app-wrapper d-flex" id="kt_app_wrapper">
+                <!-- Pagina -->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!-- Titulo -->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10">
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <div class="d-flex flex-stack flex-row-fluid">
+                                    <div class="d-flex flex-column flex-row-fluid">
+                                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                                                <a href="javascript:void(0)" class="text-white text-hover-primary">
+                                                    <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumb-item">
+                                                <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                            </li>
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">GREMLINS</li>
+                                        </ul>
+                                        <div class="page-title d-flex align-items-center me-3">
+                                            <h1 class="page-heading d-flex text-gray-900 fw-bolder fs-2qx flex-column justify-content-center my-0">Proveedores</h1>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 gap-lg-5">
+                                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_create_providers">Crear Proveedor</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenido -->
+                        <div id="kt_app_content" class="app-content" style="min-height: 780px;">
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                <div class="card card-flush mt-4">
+                                    <div class="card-body p-3" id="body_providers">
+                                        <!-- Contenido JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal para crear proveedor -->
+                <div class="modal fade" id="modal_create_providers" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Crear Proveedor</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="create_providers_form" autocomplete="off">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="id">Identificador</label>
+                                        <input type="number" class="form-control" name="id" id="id" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="nombre">Nombre (Max. Caracteres 50)</label>
+                                        <input type="text" maxlength="50" class="form-control" name="nombre" id="nombre" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="telefono">Telefono</label>
+                                        <input type="number" class="form-control" name="telefono" id="telefono" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="direccion">Dirección</label>
+                                        <input type="text" class="form-control" name="direccion" id="direccion" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="pais">Pais</label>
+                                        <input type="text" class="form-control" name="pais" id="pais" required>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_create_providers">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Registrar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para editar proveedor -->
+                <div class="modal fade" id="modal_edit_providers" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Editar Proveedor</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="edit_providers_form" autocomplete="off">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_id">Identificador</label>
+                                        <input type="number" class="form-control form-readonly" name="e_id" id="e_id" required readonly>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_nombre">Nombre (Max. Caracteres 50)</label>
+                                        <input type="text" maxlength="50" class="form-control" name="e_nombre" id="e_nombre" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_telefono">Telefono</label>
+                                        <input type="number" class="form-control" name="e_telefono" id="e_telefono" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_direccion">Dirección</label>
+                                        <input type="text" class="form-control" name="e_direccion" id="e_direccion" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_pais">Pais</label>
+                                        <input type="text" class="form-control" name="e_pais" id="e_pais" required>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_edit_providers">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Editar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eliminar Proveedor -->
+                <div id="modal_deleted_providers" class="custom-modal-bg">
+                    <div class="custom-modal-content">
+                      <p class="fs-4">¿Estás seguro de que deseas eliminar este elemento?</p>
+                      <button id="confirm-yes" class="btn btn-sm btn-danger">Sí, Eliminar!</button>
+                      <button id="confirm-no" class="btn btn-sm btn-primary">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+    <!-- Template Clientes -->
+    <template id="customers">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <div class="app-wrapper d-flex" id="kt_app_wrapper">
+                <!-- Pagina -->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!-- Titulo -->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10">
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <div class="d-flex flex-stack flex-row-fluid">
+                                    <div class="d-flex flex-column flex-row-fluid">
+                                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                                                <a href="javascript:void(0)" class="text-white text-hover-primary">
+                                                    <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumb-item">
+                                                <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                            </li>
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">GREMLINS</li>
+                                        </ul>
+                                        <div class="page-title d-flex align-items-center me-3">
+                                            <h1 class="page-heading d-flex text-gray-900 fw-bolder fs-2qx flex-column justify-content-center my-0">Clientes</h1>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 gap-lg-5">
+                                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_create_customers">Crear Cliente</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenido -->
+                        <div id="kt_app_content" class="app-content" style="min-height: 780px;">
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                <div class="card card-flush mt-4">
+                                    <div class="card-body p-3" id="body_customers">
+                                        <!-- Contenido JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal para crear cliente -->
+                <div class="modal fade" id="modal_create_customers" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Crear Cliente</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="create_customers_form" autocomplete="off">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="id">Identificador</label>
+                                        <input type="number" class="form-control" name="id" id="id" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="nombre">Nombre (Max. Caracteres 50)</label>
+                                        <input type="text" maxlength="50" class="form-control" name="nombre" id="nombre" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="telefono">Telefono</label>
+                                        <input type="number" class="form-control" name="telefono" id="telefono" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="direccion">Dirección</label>
+                                        <input type="text" class="form-control" name="direccion" id="direccion" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="pais">Pais</label>
+                                        <input type="text" class="form-control" name="pais" id="pais" required>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_create_customers">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Registrar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para editar cliente -->
+                <div class="modal fade" id="modal_edit_customers" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Editar Cliente</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="edit_customers_form" autocomplete="off">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_id">Identificador</label>
+                                        <input type="number" class="form-control form-readonly" name="e_id" id="e_id" required readonly>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_nombre">Nombre (Max. Caracteres 50)</label>
+                                        <input type="text" maxlength="50" class="form-control" name="e_nombre" id="e_nombre" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_telefono">Telefono</label>
+                                        <input type="number" class="form-control" name="e_telefono" id="e_telefono" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_direccion">Dirección</label>
+                                        <input type="text" class="form-control" name="e_direccion" id="e_direccion" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_pais">Pais</label>
+                                        <input type="text" class="form-control" name="e_pais" id="e_pais" required>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_edit_customers">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Editar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Eliminar Cliente -->
+                <div id="modal_deleted_customers" class="custom-modal-bg">
+                    <div class="custom-modal-content">
+                      <p class="fs-4">¿Estás seguro de que deseas eliminar este elemento?</p>
+                      <button id="confirm-yes" class="btn btn-sm btn-danger">Sí, Eliminar!</button>
+                      <button id="confirm-no" class="btn btn-sm btn-primary">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+    <!-- Template Pedidos -->
+    <template id="orders">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <div class="app-wrapper d-flex" id="kt_app_wrapper">
+                <!-- Pagina -->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!-- Titulo -->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10">
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <div class="d-flex flex-stack flex-row-fluid">
+                                    <div class="d-flex flex-column flex-row-fluid">
+                                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                                                <a href="javascript:void(0)" class="text-white text-hover-primary">
+                                                    <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumb-item">
+                                                <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                            </li>
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">GREMLINS</li>
+                                        </ul>
+                                        <div class="page-title d-flex align-items-center me-3">
+                                            <h1 class="page-heading d-flex text-gray-900 fw-bolder fs-2qx flex-column justify-content-center my-0">Pedidos</h1>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 gap-lg-5">
+                                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal_create_order">Crear Pedido</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenido -->
+                        <div id="kt_app_content" class="app-content" style="min-height: 780px;">
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                <div class="card card-flush mt-4">
+                                    <div class="card-body p-3" id="body_orders">
+                                        <!-- Contenido JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal para crear Pedido -->
+                <div class="modal fade" id="modal_create_order" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Crear Pedido</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="create_order_form" autocomplete="off">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="cliente">Cliente</label>
+                                        <select name="cliente" id="cliente" class="form-select" required>
+                                            <option value="" selected hidden disabled>Seleccione...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="producto">Producto</label>
+                                        <select name="producto" id="producto" class="form-select" required>
+                                            <option value="" selected hidden disabled>Seleccione...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="cantidad">Cantidad</label>
+                                        <input type="number" class="form-control" name="cantidad" id="cantidad" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="observaciones">Observaciones</label>
+                                        <input type="text" class="form-control" name="observaciones" id="observaciones" required>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_create_order">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Crear Pedido</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal para editar cliente -->
+                <div class="modal fade" id="modal_edit_customers" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Editar Cliente</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="edit_order_form" autocomplete="off">
+
+                                    <input type="hidden" name="e_id" id="e_id">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_cliente">Cliente</label>
+                                        <select name="e_cliente" id="e_cliente" class="form-select" required>
+                                            <option value="" selected hidden disabled>Seleccione...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_producto">Producto</label>
+                                        <select name="e_producto" id="e_producto" class="form-select" required>
+                                            <option value="" selected hidden disabled>Seleccione...</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_cantidad">Cantidad</label>
+                                        <input type="number" class="form-control" name="e_cantidad" id="e_cantidad" required>
+                                    </div>
+
+                                    <div class="col-12 mb-5">
+                                        <label for="e_observaciones">Observaciones</label>
+                                        <input type="text" class="form-control" name="e_observaciones" id="e_observaciones" required>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_edit_order">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Editar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Eliminar Cliente -->
+                <div id="modal_deleted_order" class="custom-modal-bg">
+                    <div class="custom-modal-content">
+                      <p class="fs-4">¿Estás seguro de que deseas eliminar este pedido?</p>
+                      <button id="confirm-yes" class="btn btn-sm btn-danger">Sí, Eliminar!</button>
+                      <button id="confirm-no" class="btn btn-sm btn-primary">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+    <!-- Template Seguimiento -->
+    <template id="tracking">
+        <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
+            <div class="app-wrapper d-flex" id="kt_app_wrapper">
+                <!-- Pagina -->
+                <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+                    <div class="d-flex flex-column flex-column-fluid">
+                        <!-- Titulo -->
+                        <div id="kt_app_toolbar" class="app-toolbar pt-7 pt-lg-10">
+                            <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
+                                <div class="d-flex flex-stack flex-row-fluid">
+                                    <div class="d-flex flex-column flex-row-fluid">
+                                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold mb-3">
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                                                <a href="javascript:void(0)" class="text-white text-hover-primary">
+                                                    <i class="ki-outline ki-home text-gray-700 fs-6"></i>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumb-item">
+                                                <i class="ki-outline ki-right fs-5 text-gray-700 mx-n1"></i>
+                                            </li>
+                                            <li class="breadcrumb-item text-gray-700 fw-bold lh-1">GREMLINS</li>
+                                        </ul>
+                                        <div class="page-title d-flex align-items-center me-3">
+                                            <h1 class="page-heading d-flex text-gray-900 fw-bolder fs-2qx flex-column justify-content-center my-0">Tracking</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contenido -->
+                        <div id="kt_app_content" class="app-content" style="min-height: 780px;">
+                            <div id="kt_app_content_container" class="app-container container-fluid">
+                                <div class="card card-flush mt-4">
+                                    <div class="card-body p-3" id="body_tracking">
+                                        <!-- Contenido JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal para editar estado -->
+                <div class="modal fade" id="modal_edit_state" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog p-9">
+                        <div class="modal-content modal-rounded">
+                            <div class="modal-header py-7 d-flex justify-content-between">
+                                <h2>Actualizar Estado</h2>
+                                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                    <i class="ki-outline ki-cross fs-1"></i>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+
+                                <form class="form-group row" id="edit_state_order_form" autocomplete="off">
+
+                                    <input type="hidden" name="id" id="id">
+
+                                    <div class="col-12 mb-5">
+                                        <label for="estado">Estado</label>
+                                        <select name="estado" id="estado" class="form-select" required>
+                                            <option value="" selected hidden disabled>Seleccione...</option>
+                                            <option value="pendiente">Pendiente</option>
+                                            <option value="en proceso">En Proceso</option>
+                                            <option value="completo">Completo</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="btn-group col-12">
+                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal" id="close_modal_edit_state">Cancelar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Actualizar</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+
+    <!-- Assets del layout -->
+    <script>var hostUrl = "assets/";</script>
+    <script src="./assets/plugins/global/plugins.bundle.js"></script>
+    <script src="./assets/js/scripts.bundle.js"></script>
+
+    <!-- Carga de funcionalidad KTJ -->
+    <script src="./assets/js/ktj.modules.js"></script>
+    <script src="./assets/js/ktj.main.js"></script>
+    <script src="./assets/js/ktj.router.js"></script>
+</body>
+</html>
